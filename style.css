@@ -1,0 +1,17 @@
+.title {
+    text-align: center;
+}
+.form{
+    margin-top: 40px;
+    display: flex;
+}
+button {
+    margin-left: 5px;
+}
+table {
+    margin-top: 30px;
+}
+.todo{
+    display: flex;
+    justify-content: space-between;
+}

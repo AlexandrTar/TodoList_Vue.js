@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+       <div class="container">
+           <h1 class="title">{{title}}</h1>
+           <div class="form">
+               <input
+                       @keypress.enter="addTodo"
+                       class="form-control"
+                       type="text"
+                       v-model="newTodo"
+               >
+               <button
+                       type="button"
+                       class="btn btn-secondary"
+                       @click="addTodo"
+               >
+                   Add
+               </button>
+           </div>
+           <table class="table table-dark">
+               <thead>
+               <tr>
+                   <th><h2>Todos:</h2></th>
+               </tr>
+               </thead>
+               <tbody>
+               <tr v-for="(todo, index) in todos">
+                   <th
+                           class="todo"
+                           scope="row"
+                   >
+                       {{todo}}
+                       <button
+                               class="btn btn-danger"
+                               @click="deleteTodo(index)"
+                       >
+                           Delete
+                       </button>
+                   </th>
+               </tr>
+               </tbody>
+           </table>
+       </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
